@@ -1,7 +1,8 @@
-from captcha import *
+from twocaptcha import *
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from time import sleep
+from solvedbc import *
 
 
 driver = webdriver.Firefox()
@@ -9,7 +10,7 @@ driver = webdriver.Firefox()
 
 driver.get("https://balance.vanillagift.com")
 sleep(2)
-slowdown=input("enter anything to continue")
+slowdown = input("enter anything to continue")
 ele = driver.find_element_by_id("cardnumber")
 ele.send_keys("4847188208143752")
 sleep(2)
@@ -23,8 +24,10 @@ ele = driver.find_element_by_id("cvv")
 ele.send_keys("658")
 sleep(2)
 print("solving captcha")
-result = captcha("621c58aaec476f4a0189c95b8f579235","6LcCe6EUAAAAABe_J3jua3SnvvZbwFqY5B7Z-GD5","https://balance.vanillagift.com")
+# result = twocaptcha("621c58aaec476f4a0189c95b8f579235","6LcCe6EUAAAAABe_J3jua3SnvvZbwFqY5B7Z-GD5","https://balance.vanillagift.com")
+result = solvedbc()
 print("captcha received. submitting")
+print(result)
 driver.execute_script(open("submitcaptcha.js").read(), result)
 sleep(2)
 ele = driver.find_element_by_id("brandLoginForm_button")

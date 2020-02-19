@@ -1,4 +1,4 @@
-def captcha(apikey, sitekey, url):
+def twocaptcha(apikey, sitekey, url):
 
     import requests
     from time import sleep
