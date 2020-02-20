@@ -2,8 +2,8 @@ def solvedbc():
     import dbc
     import json
     # Put your DBC account username and password here.
-    username = "username"
-    password = "password"
+    username = "dividesby01"
+    password = "Nokia123@"
 
     # Put the proxy and reCaptcha token data
     Captcha_dict = {
