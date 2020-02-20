@@ -18,7 +18,7 @@ def twocaptcha(apikey, sitekey, url):
         "http://2captcha.com/res.php?key={}&action=get&id={}".format(API_KEY, captcha_id)).text
     print("solving ref captcha...")
     while 'CAPCHA_NOT_READY' in recaptcha_answer:
-        sleep(5)
+        sleep(3)
         recaptcha_answer = s.get(
             "http://2captcha.com/res.php?key={}&action=get&id={}".format(API_KEY, captcha_id)).text
     recaptcha_answer = recaptcha_answer.split('|')[1]
